@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tarjeta de Presentación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #80003F 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #80003F 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            /* Fondo blanco puro */
+            background: white; 
+            margin: 0 auto 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        /* REGLA CSS para el logo */
+        .profile-image img {
+            /* REVERTIDO: Volvemos al 100% para que el logo sin fondo se ajuste correctamente al círculo blanco */
+            width: 100%; 
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        /* FIN REGLA CSS */
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .contact-section {
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-item i {
+            width: 25px;
+            color: #80003F;
+            font-size: 16px;
+        }
+
+        .contact-item a {
+            color: #80003F;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #80003F;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(128, 0, 63, 0.1);
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #80003F 0%, #c2005a 100%);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(128, 0, 63, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #f9f9f9;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Encabezado -->
+        <div class="card-header">
+            <!-- CAMBIO AQUÍ: Nueva URL de imagen y el CSS revertido a 100% para mejor ajuste -->
+            <div class="profile-image">
+                <img src="https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png" 
+                     alt="Logo de ES Estética Professional" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/120x120/80003F/ffffff?text=Error+Logo';">
+            </div>
+            <div class="name">ES Estética Professional</div>
+            <div class="title">Eva Mª Sánchez</div>
+        </div>
+
+        <!-- Cuerpo -->
+        <div class="card-body">
+            <div class="description">
+                Estética avanzada y terapias de piel con 30 años de experiencia, enfocadas en tu Belleza, Salud y Bienestar.
+            </div>
+
+            <!-- Contacto -->
+            <div class="contact-section">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+34611106981">+34 611 10 69 81</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:esesteticaprofessional@gmail.com">esesteticaprofessional@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Calle Aragó 3-5ºA, 12540 Vila-real, Castellón</span>
+                </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="social-links">
+                <a href="https://esesteticaprofesional.com/" class="social-link" title="Sitio Web">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://www.instagram.com/esesteticaprofessional/" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/es.esteticaprofessional" class="social-link" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.google.com/search?sca_esv=8ec2f2260aee0977&sxsrf=AE3TifOzh9UzgQGua2u5b4geooMd__VaoA:1760913371852&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwZs7wPFaeXaJVEMwcyG3-5nxPwPezX2BeXFAO8smq3pVcaUGGDbgiX6YrtkmqX2kcISlNwY9vWN7lgwsP9iexr0NzbWEyUiUWjuBgBlouuG-1-brw%3D%3D&q=ES+est%C3%A8tica+professional+Rese%C3%B1as&sa=X&ved=2ahUKEwjnuonAqbGQAxUwSfEDHV0_CeoQ0bkNegQITBAE&biw=1920&bih=957&dpr=1" class="social-link" title="Google Reseñas">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="footer">
+            ES Estética Professional - Tu Tarjeta Digital
+        </div>
+    </div>
+</body>
+</html>

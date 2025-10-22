@@ -194,13 +194,14 @@
     <div class="card-container">
         <!-- Encabezado -->
         <div class="card-header">
-            <!-- CAMBIO AQUÍ: Nueva URL de imagen y el CSS revertido a 100% para mejor ajuste -->
+            <!-- CAMBIO 1: Nombre del logo alt -->
             <div class="profile-image">
                 <img src="https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png" 
-                     alt="Logo de ES Estética Professional" 
+                     alt="Logo de ES Estètica Professional" 
                      onerror="this.onerror=null;this.src='https://placehold.co/120x120/80003F/ffffff?text=Error+Logo';">
             </div>
-            <div class="name">ES Estética Professional</div>
+            <!-- CAMBIO 2: Nombre visible en la tarjeta -->
+            <div class="name">ES Estètica Professional</div>
             <div class="title">Eva Mª Sánchez</div>
         </div>
 
@@ -250,31 +251,35 @@
         </div>
 
         <!-- Pie de página -->
+        <!-- CAMBIO 3: Nombre en el pie de página -->
         <div class="footer">
-            ES Estética Professional - Tu Tarjeta Digital
+            ES Estètica Professional - Tu Tarjeta Digital
         </div>
     </div>
 
     <script>
         function generateVCardAndDownload() {
-            const fullName = "Eva María Sánchez"; // Nombre completo (FN)
-            const organization = "ES Estética Professional"; // Organización (ORG)
-            const title = "Estética avanzada y terapias de piel"; // Título/Puesto (TITLE)
-            const phone = "+34611106981"; // Teléfono (TEL)
-            const email = "esesteticaprofessional@gmail.com"; // Email (EMAIL)
-            const address = "Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España"; // Dirección (ADR) - Separar con ;
+            // CAMBIO 4: Nombre completo para el título del contacto (VCard FN y ORG)
+            const fullName = "ES Estètica Professional"; 
+            const organization = "ES Estètica Professional"; 
+            
+            const employeeName = "Eva María Sánchez";
+            const title = "Estética avanzada y terapias de piel";
+            const phone = "+34611106981";
+            const email = "esesteticaprofessional@gmail.com";
+            const address = "Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España";
 
             // Construcción del contenido VCard (v3.0)
             const vCardContent = [
                 "BEGIN:VCARD",
                 "VERSION:3.0",
-                `FN:${fullName}`, // Nombre Completo
-                `N:Sánchez;Eva María;;;`, // Apellido;Nombre;Segundo Nombre;Prefijo;Sufijo
-                `ORG:${organization}`, // Organización
-                `TITLE:${title}`, // Puesto/Título
-                `TEL;TYPE=WORK,VOICE:${phone}`, // Teléfono
-                `EMAIL;TYPE=PREF,INTERNET:${email}`, // Email
-                `ADR;TYPE=WORK:;;${address}`, // Dirección (;;P.O. Box;Street;City;State/Province;Zip;Country)
+                `FN:${fullName}`, 
+                `N:Sánchez;Eva María;;;`, 
+                `ORG:${organization}`, 
+                `TITLE:${title}`,
+                `TEL;TYPE=WORK,VOICE:${phone}`,
+                `EMAIL;TYPE=PREF,INTERNET:${email}`,
+                `ADR;TYPE=WORK:;;Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España`,
                 "END:VCARD"
             ].join('\n');
 
@@ -284,8 +289,8 @@
             // Crear un enlace temporal para la descarga
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = 'ES_Estetica_Professional.vcf'; // Nombre del archivo
-
+            a.download = 'ES_Estetica_Professional.vcf'; 
+            
             // Simular el clic para iniciar la descarga
             document.body.appendChild(a);
             a.click();

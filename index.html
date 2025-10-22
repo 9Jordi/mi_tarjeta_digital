@@ -152,7 +152,7 @@
             display: block;
             width: 100%;
             padding: 12px 20px;
-            margin-bottom: 25px; /* Separación del botón con respecto a redes sociales */
+            margin-bottom: 25px; /* Restauramos la separación anterior */
             border: none;
             border-radius: 10px;
             background: linear-gradient(45deg, #80003F, #A42C74); /* Degradado más intenso */
@@ -163,7 +163,7 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.1s ease;
             box-shadow: 0 6px 15px rgba(128, 0, 63, 0.4);
-            text-decoration: none; /* Asegurar que no tenga subrayado si se usa como <a> */
+            text-decoration: none; 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -181,6 +181,8 @@
         }
         /* ------------------------------------- */
 
+        /* ELIMINAMOS EL ESTILO DEL BOTÓN GRANDE DE WHATSAPP */
+
         .footer {
             text-align: center;
             padding: 15px;
@@ -194,15 +196,15 @@
     <div class="card-container">
         <!-- Encabezado -->
         <div class="card-header">
-            <!-- CAMBIO 1: Nombre del logo alt -->
+            <!-- Nombre del logo alt -->
             <div class="profile-image">
                 <img src="https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png" 
                      alt="Logo de ES Estètica Professional" 
                      onerror="this.onerror=null;this.src='https://placehold.co/120x120/80003F/ffffff?text=Error+Logo';">
             </div>
-            <!-- CAMBIO 2: Nombre visible en la tarjeta -->
+            <!-- Nombre visible en la tarjeta -->
             <div class="name">ES Estètica Professional</div>
-            <div class="title">Eva Mª Sánchez</div>
+            <div class="title">Eva Sánchez</div>
         </div>
 
         <!-- Cuerpo -->
@@ -228,6 +230,7 @@
             </div>
 
             <!-- Botón VCard -->
+            <!-- Es buena idea dejar el botón de Guardar Contacto separado para que destaque la acción principal -->
             <button class="vcard-button" onclick="generateVCardAndDownload()">
                 <i class="fas fa-address-card"></i>
                 Guardar Contacto
@@ -235,6 +238,12 @@
             
             <!-- Redes Sociales -->
             <div class="social-links">
+                <!-- BOTÓN: WhatsApp como icono social -->
+                <a href="https://wa.me/34611106981?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita%20o%20m%C3%A1s%20informaci%C3%B3n." 
+                   class="social-link" title="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
                 <a href="https://esesteticaprofesional.com/" class="social-link" title="Sitio Web">
                     <i class="fas fa-globe"></i>
                 </a>
@@ -251,7 +260,6 @@
         </div>
 
         <!-- Pie de página -->
-        <!-- CAMBIO 3: Nombre en el pie de página -->
         <div class="footer">
             ES Estètica Professional - Tu Tarjeta Digital
         </div>
@@ -259,7 +267,7 @@
 
     <script>
         function generateVCardAndDownload() {
-            // CAMBIO 4: Nombre completo para el título del contacto (VCard FN y ORG)
+            // Nombre completo para el título del contacto (VCard FN y ORG)
             const fullName = "ES Estètica Professional"; 
             const organization = "ES Estètica Professional"; 
             
@@ -274,7 +282,7 @@
                 "BEGIN:VCARD",
                 "VERSION:3.0",
                 `FN:${fullName}`, 
-                `N:Sánchez;Eva María;;;`, 
+                `N:Estètica;Eva Sánchez;;;`, // Formato de VCard modificado
                 `ORG:${organization}`, 
                 `TITLE:${title}`,
                 `TEL;TYPE=WORK,VOICE:${phone}`,

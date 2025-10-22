@@ -147,6 +147,40 @@
             box-shadow: 0 8px 25px rgba(128, 0, 63, 0.4);
         }
 
+        /* --- Estilos para el botón de VCard --- */
+        .vcard-button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 25px; /* Separación del botón con respecto a redes sociales */
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #80003F, #A42C74); /* Degradado más intenso */
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 6px 15px rgba(128, 0, 63, 0.4);
+            text-decoration: none; /* Asegurar que no tenga subrayado si se usa como <a> */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .vcard-button:hover {
+            background: linear-gradient(45deg, #A42C74, #80003F);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(128, 0, 63, 0.6);
+        }
+
+        .vcard-button:active {
+            transform: translateY(0);
+        }
+        /* ------------------------------------- */
+
         .footer {
             text-align: center;
             padding: 15px;
@@ -192,6 +226,12 @@
                 </div>
             </div>
 
+            <!-- Botón VCard -->
+            <button class="vcard-button" onclick="generateVCardAndDownload()">
+                <i class="fas fa-address-card"></i>
+                Guardar Contacto
+            </button>
+            
             <!-- Redes Sociales -->
             <div class="social-links">
                 <a href="https://esesteticaprofesional.com/" class="social-link" title="Sitio Web">
@@ -214,5 +254,43 @@
             ES Estética Professional - Tu Tarjeta Digital
         </div>
     </div>
+
+    <script>
+        function generateVCardAndDownload() {
+            const fullName = "Eva María Sánchez"; // Nombre completo (FN)
+            const organization = "ES Estética Professional"; // Organización (ORG)
+            const title = "Estética avanzada y terapias de piel"; // Título/Puesto (TITLE)
+            const phone = "+34611106981"; // Teléfono (TEL)
+            const email = "esesteticaprofessional@gmail.com"; // Email (EMAIL)
+            const address = "Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España"; // Dirección (ADR) - Separar con ;
+
+            // Construcción del contenido VCard (v3.0)
+            const vCardContent = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                `FN:${fullName}`, // Nombre Completo
+                `N:Sánchez;Eva María;;;`, // Apellido;Nombre;Segundo Nombre;Prefijo;Sufijo
+                `ORG:${organization}`, // Organización
+                `TITLE:${title}`, // Puesto/Título
+                `TEL;TYPE=WORK,VOICE:${phone}`, // Teléfono
+                `EMAIL;TYPE=PREF,INTERNET:${email}`, // Email
+                `ADR;TYPE=WORK:;;${address}`, // Dirección (;;P.O. Box;Street;City;State/Province;Zip;Country)
+                "END:VCARD"
+            ].join('\n');
+
+            // Crear un Blob (archivo binario) con el contenido de la vCard
+            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+
+            // Crear un enlace temporal para la descarga
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'ES_Estetica_Professional.vcf'; // Nombre del archivo
+
+            // Simular el clic para iniciar la descarga
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
 </body>
 </html>

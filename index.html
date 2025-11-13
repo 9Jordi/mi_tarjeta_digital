@@ -43,7 +43,7 @@
             height: 120px;
             border-radius: 50%;
             /* Fondo blanco puro */
-            background: white; 
+            background: white;
             margin: 0 auto 20px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             display: flex;
@@ -57,7 +57,7 @@
         /* REGLA CSS para el logo */
         .profile-image img {
             /* REVERTIDO: Volvemos al 100% para que el logo sin fondo se ajuste correctamente al círculo blanco */
-            width: 100%; 
+            width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
@@ -163,7 +163,7 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.1s ease;
             box-shadow: 0 6px 15px rgba(128, 0, 63, 0.4);
-            text-decoration: none; 
+            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -194,26 +194,21 @@
 </head>
 <body>
     <div class="card-container">
-        <!-- Encabezado -->
         <div class="card-header">
-            <!-- Nombre del logo alt -->
             <div class="profile-image">
-                <img src="https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png" 
-                     alt="Logo de ES Estètica Professional" 
-                     onerror="this.onerror=null;this.src='https://placehold.co/120x120/80003F/ffffff?text=Error+Logo';">
+                <img src="https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png"
+                    alt="Logo de ES Estètica Professional"
+                    onerror="this.onerror=null;this.src='https://placehold.co/120x120/80003F/ffffff?text=Error+Logo';">
             </div>
-            <!-- Nombre visible en la tarjeta -->
             <div class="name">ES Estètica Professional</div>
             <div class="title">Eva Sánchez</div>
         </div>
 
-        <!-- Cuerpo -->
         <div class="card-body">
             <div class="description">
                 Estética avanzada y terapias de piel con 30 años de experiencia, enfocadas en tu Belleza, Salud y Bienestar.
             </div>
 
-            <!-- Contacto -->
             <div class="contact-section">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
@@ -229,18 +224,14 @@
                 </div>
             </div>
 
-            <!-- Botón VCard -->
-            <!-- Es buena idea dejar el botón de Guardar Contacto separado para que destaque la acción principal -->
             <button class="vcard-button" onclick="generateVCardAndDownload()">
                 <i class="fas fa-address-card"></i>
                 Guardar Contacto
             </button>
             
-            <!-- Redes Sociales -->
             <div class="social-links">
-                <!-- BOTÓN: WhatsApp como icono social -->
-                <a href="https://wa.me/34611106981?text=Hola." 
-                   class="social-link" title="Contactar por WhatsApp">
+                <a href="https://wa.me/34611106981?text=Hola."
+                    class="social-link" title="Contactar por WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
@@ -253,13 +244,12 @@
                 <a href="https://www.facebook.com/es.esteticaprofessional" class="social-link" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.google.com/search?sca_esv=8ec2f2260aee0977&sxsrf=AE3TifOzh9UzgQGua2u5b4geooMd__VaoA:1760913371852&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwZs7wPFaeXaJVEMwcyG3-5nxPwPezX2BeXFAO8smq3pVcaUGGDbgiX6YrtkmqX2kcISlNwY9vWN7lgwsP9iexr0NzbWEyUiUWjuBgBlouuG-1-brw%3D%3D&q=ES+est%C3%A8tica+professional+Rese%C3%B1as&sa=X&ved=2ahUKEwjnuonAqbGQAxUwSfEDHV0_CeoQ0bkNegQITBAE&biw=1920&bih=957&dpr=1" class="social-link" title="Google Reseñas">
+                <a href="https://www.google.com/search?sca_esv=8ec2f2260aee0977&sxsrf=AE3TifOzh9UzgQGua2u5b4geooMd__VaoA:1760913371852&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwZs7wPFaeXaJVEMwcyG3-5nxPwPezX2BeFFAO8smq3pVcaUGGDbgiX6YrtkmqX2kcISlNwY9vWN7lgwsP9iexr0NzbWEyUiUWjuBgBlouuG-1-brw%3D%3D&q=ES+est%C3%A8tica+professional+Rese%C3%B1as&sa=X&ved=2ahUKEwjnuonAqbGQAxUwSfEDHV0_CeoQ0bkNegQITBAE&biw=1920&bih=957&dpr=1" class="social-link" title="Google Reseñas">
                     <i class="fab fa-google"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Pie de página -->
         <div class="footer">
             ES Estètica Professional - Tu Tarjeta Digital
         </div>
@@ -267,42 +257,83 @@
 
     <script>
         function generateVCardAndDownload() {
-            // Nombre completo para el título del contacto (VCard FN y ORG)
-            const fullName = "ES Estètica Professional"; 
-            const organization = "ES Estètica Professional"; 
-            
-            const employeeName = "Eva María Sánchez";
+            const fullName = "ES Estètica Professional";
+            const organization = "ES Estètica Professional";
             const title = "Estética avanzada y terapias de piel";
             const phone = "+34611106981";
             const email = "esesteticaprofessional@gmail.com";
+
+            // Dirección para el VCard (Calle;Ciudad;Provincia;Código Postal;País)
             const address = "Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España";
 
-            // Construcción del contenido VCard (v3.0)
-            const vCardContent = [
-                "BEGIN:VCARD",
-                "VERSION:3.0",
-                `FN:${fullName}`, 
-                `N:Estètica;Eva Sánchez;;;`, // Formato de VCard modificado
-                `ORG:${organization}`, 
-                `TITLE:${title}`,
-                `TEL;TYPE=WORK,VOICE:${phone}`,
-                `EMAIL;TYPE=PREF,INTERNET:${email}`,
-                `ADR;TYPE=WORK:;;Calle Aragó 3-5ºA;Vila-real;Castellón;12540;España`,
-                "END:VCARD"
-            ].join('\n');
-
-            // Crear un Blob (archivo binario) con el contenido de la vCard
-            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
-
-            // Crear un enlace temporal para la descarga
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'ES_Estetica_Professional.vcf'; 
+            // Enlaces de redes sociales y web
+            const instagramUrl = "https://www.instagram.com/es_esteticaeva/";
+            const facebookUrl = "https://www.facebook.com/es.esteticaprofessional";
+            const websiteUrl = "https://esesteticaprofesional.com/"; 
             
-            // Simular el clic para iniciar la descarga
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            // URL de la imagen de perfil (logo)
+            const imageUrl = "https://i.ibb.co/XrvB82S9/logo-separado-png-sin-fonfo.png";
+
+            // Función para obtener la imagen como Base64 (asíncrona)
+            function getBase64Image(url) {
+                return new Promise((resolve, reject) => {
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Error al cargar la imagen');
+                            return response.blob();
+                        })
+                        .then(blob => {
+                            const reader = new FileReader();
+                            reader.onloadend = () => {
+                                // Obtener solo la parte Base64, quitando el prefijo
+                                const base64String = reader.result.split(',')[1]; 
+                                resolve(base64String);
+                            };
+                            reader.onerror = reject;
+                            reader.readAsDataURL(blob);
+                        })
+                        .catch(reject);
+                });
+            }
+
+            // Iniciar el proceso de descarga de la imagen y creación del VCard
+            getBase64Image(imageUrl).then(base64data => {
+                const vCardContent = [
+                    "BEGIN:VCARD",
+                    "VERSION:3.0",
+                    `FN:${fullName}`,
+                    `N:Estètica;Eva Sánchez;;;`,
+                    `ORG:${organization}`,
+                    `TITLE:${title}`,
+                    // PHOTO: Campo para incrustar la imagen en Base64
+                    // IMPORTANTE: Se asume que el logo es PNG por la extensión de tu URL
+                    `PHOTO;TYPE=PNG;ENCODING=B:${base64data}`, 
+                    `TEL;TYPE=WORK,VOICE:${phone}`,
+                    `EMAIL;TYPE=PREF,INTERNET:${email}`,
+                    `ADR;TYPE=WORK:;;${address}`,
+
+                    // Campos URL para redes sociales y web
+                    `URL;TYPE=Website:${websiteUrl}`,
+                    `URL;TYPE=Instagram:${instagramUrl}`,
+                    `URL;TYPE=Facebook:${facebookUrl}`,
+
+                    "END:VCARD"
+                ].join('\n');
+
+                // Crear y descargar el Blob (archivo .vcf)
+                const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'ES_Estetica_Professional.vcf';
+                
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+            }).catch(error => {
+                console.error("Error al generar la VCard. Puede que haya un problema con la imagen:", error);
+                alert("Hubo un error al generar la tarjeta de contacto. Por favor, inténtalo de nuevo. Asegúrate de que la URL de la imagen es correcta.");
+            });
         }
     </script>
 </body>
